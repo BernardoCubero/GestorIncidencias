@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="TOP_CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: white; -fx-background-radius: 10;">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Buscar y Modificar Incidencia" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    
+    <!-- Búsqueda por ID -->
+    <Label text="BUSCAR POR ID" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+    <Separator/>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="txtBuscarId" promptText="ID de la incidencia" prefWidth="200"/>
+        <Button text="Buscar" onAction="#buscarIncidenciaPorId"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 100;"/>
+    </HBox>
+    
+    <!-- Información de la incidencia -->
+    <VBox fx:id="panelInfo" spacing="10" visible="false" managed="false" 
+          style="-fx-background-color: #ecf0f1; -fx-padding: 15; -fx-background-radius: 8;">
+        
+        <Label text="INFORMACIÓN DE LA INCIDENCIA" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        
+        <GridPane hgap="10" vgap="8">
+            <Label text="ID:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Label fx:id="lblId" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            
+            <Label text="Título:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Label fx:id="lblTitulo" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            
+            <Label text="Cliente:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <Label fx:id="lblCliente" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            
+            <Label text="Teléfono:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <Label fx:id="lblTelefono" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            
+            <Label text="Email:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <Label fx:id="lblEmail" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            
+            <Label text="Asignado a:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <Label fx:id="lblEmpleado" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+            
+            <Label text="Fecha:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+            <Label fx:id="lblFecha" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        </GridPane>
+        
+        <Separator/>
+        
+        <Label text="CAMBIAR ESTADO" style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Estado Actual:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblEstadoActual" style="-fx-text-fill: #e67e22; -fx-font-weight: bold; -fx-font-size: 14;"/>
+        </HBox>
+        
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Nuevo Estado:"/>
+            <ComboBox fx:id="cmbEstado" prefWidth="200"/>
+            <Button text="Actualizar Estado" onAction="#actualizarEstado"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </HBox>
+    </VBox>
+    
+    <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+        <Button text="Volver" onAction="#volverInicio"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 100;"/>
+    </HBox>
+</VBox>

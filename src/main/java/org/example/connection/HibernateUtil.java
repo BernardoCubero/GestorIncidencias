@@ -1,7 +1,9 @@
 package org.example.connection;
 
+import org.example.model.Departamento;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.example.model.Empleado;
 import org.example.model.IncidenciaEntity;
 
 public class HibernateUtil {
@@ -9,22 +11,23 @@ public class HibernateUtil {
 
     static {
         try {
-            // Carga la configuración del hibernate.cfg.xml
-            sessionFactory = new Configuration()
-                    .configure("hibernate.cfg.xml")
+            // Cargamos la configuración y registramos las entidades para las relaciones
+            sessionFactory = new Configuration().configure("hibernate.cfg.xml")
+                    .addAnnotatedClass(Departamento.class)
+                    .addAnnotatedClass(Empleado.class)
                     .addAnnotatedClass(IncidenciaEntity.class)
                     .buildSessionFactory();
         } catch (Throwable ex) {
-            System.err.println("Error al crear la SessionFactory: " + ex);
+            System.err.println("Fallo al crear la SessionFactory: " + ex);
             throw new ExceptionInInitializerError(ex);
         }
     }
 
     public static SessionFactory getSessionFactory() {
-        if (sessionFactory == null) {
-            sessionFactory = new Configuration().configure("hibernate.cfg.xml")
-                    .addAnnotatedClass(IncidenciaEntity.class).buildSessionFactory();
-        }
         return sessionFactory;
+    }
+
+    public static void shutdown() {
+        getSessionFactory().close();
     }
 }

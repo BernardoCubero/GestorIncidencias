@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15.0" alignment="TOP_CENTER" style="-fx-background-color: white; -fx-background-radius: 10;"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Nueva Incidencia" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    
+    <!-- Datos de la Incidencia -->
+    <Label text="DATOS DE LA INCIDENCIA" style="-fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+    <Separator/>
+    
+    <TextField fx:id="txtTitulo" promptText="Título de la incidencia"
+               style="-fx-pref-width: 400;"/>
+    <TextArea fx:id="txtDescripcion" promptText="Detalles técnicos"
+              prefHeight="100.0" style="-fx-pref-width: 400;"/>
+    
+    <!-- Asignación de Empleado -->
+    <Label text="ASIGNAR A EMPLEADO" style="-fx-font-weight: bold; -fx-text-fill: #34495e; -fx-padding: 10 0 0 0;"/>
+    <Separator/>
+    
+    <ComboBox fx:id="cmbEmpleado" promptText="Seleccione un empleado responsable" 
+              prefWidth="400" style="-fx-font-size: 13;"/>
+    
+    <!-- Datos del Cliente -->
+    <Label text="DATOS DEL CLIENTE" style="-fx-font-weight: bold; -fx-text-fill: #34495e; -fx-padding: 10 0 0 0;"/>
+    <Separator/>
+    
+    <TextField fx:id="txtNombreCliente" promptText="Nombre del cliente" 
+               style="-fx-pref-width: 400;"/>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="txtTelefonoCliente" promptText="Teléfono (opcional)" 
+                   prefWidth="195"/>
+        <TextField fx:id="txtEmailCliente" promptText="Email (opcional)" 
+                   prefWidth="195"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+        <Button text="Guardar Incidencia" onAction="#onGuardar"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 180; -fx-font-size: 14;"/>
+        <Button text="Volver" onAction="#volverInicio"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 100;"/>
+    </HBox>
+</VBox>

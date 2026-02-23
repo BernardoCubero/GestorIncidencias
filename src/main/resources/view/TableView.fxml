@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15.0" alignment="TOP_CENTER" style="-fx-background-color: white; -fx-background-radius: 10;"
+      xmlns:fx="http://javafx.com/fxml/1">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <Label text="Historial y Auditoría (MongoDB)" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+    
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Ver TODOS los Logs" onAction="#verTodosLosLogs"
+                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 150;"/>
+        <Button text="Actualizar" onAction="#verTodosLosLogs"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 100;"/>
+    </HBox>
+
+    <Separator/>
+
+    <TableView fx:id="tblLogs" prefHeight="350.0" prefWidth="700">
+        <columns>
+            <TableColumn fx:id="colId" text="ID Incidencia" prefWidth="100"/>
+            <TableColumn fx:id="colAccion" text="Acción" prefWidth="120"/>
+            <TableColumn fx:id="colUsuario" text="Usuario" prefWidth="120"/>
+            <TableColumn fx:id="colDetalle" text="Detalle" prefWidth="200"/>
+            <TableColumn fx:id="colFecha" text="Fecha" prefWidth="160"/>
+        </columns>
+    </TableView>
+    
+    <Label fx:id="lblTotalLogs" text="Total de logs: 0" style="-fx-font-weight: bold; -fx-text-fill: #7f8c8d;"/>
+    
+    <Button text="Volver al Inicio" onAction="#volverInicio"
+            style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 150;"/>
+</VBox>
