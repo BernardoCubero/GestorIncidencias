@@ -496,16 +496,16 @@ mvn javafx:run
    - Título: "Error en servidor principal"
    - Descripción: "El servidor no responde desde las 10:00"
    - Cliente: "María García"
-   - Teléfono: "612345678"
+   - Teléfono: "554477445"
    - Email: "maria@empresa.com"
 3. Seleccionar empleado del desplegable
 4. Verificar que aparece el departamento
 5. Clic en **Guardar**
 6. Ver consola:
    ```
-   🔵 Guardando en MongoDB...
-   ✅ Documento guardado exitosamente en MongoDB
-   📄 JSON actualizado automáticamente: [...]\logs_mongodb_export.json
+   Guardando en MongoDB...
+   Documento guardado exitosamente en MongoDB
+   JSON actualizado automáticamente: [...]\logs_mongodb_export.json
       Total de eventos: 1
    ```
 
